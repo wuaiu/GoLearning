@@ -1,16 +1,15 @@
 package main
 
 import (
-	"demo/demo1/strings"
 	"fmt"
+	"github.com/GoLearning/strings"
 	"io"
 )
 
-
 func f(out io.Writer) {
-	fmt.Printf("%T\n",out)
+	fmt.Printf("%T\n", out)
 	out = nil
-	fmt.Printf("%T\n",out)
+	fmt.Printf("%T\n", out)
 }
 func main() {
 	//function.Test()

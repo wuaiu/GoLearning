@@ -1,7 +1,6 @@
 package json
 
 import (
-	"code.byted.org/gopkg/jsonx"
 	"fmt"
 )
 
@@ -24,8 +23,7 @@ type Content struct {
 }
 
 func Build() *Req {
-	req := &Req{
-	}
+	req := &Req{}
 	req.Config = make(map[string]interface{}, 0)
 	req.Config["wide_screen_mode"] = true
 	req.Header.Template = "red"
@@ -42,13 +40,13 @@ func Build() *Req {
 	operatorContent.Content = "关注人"
 	operatorContent.Tag = "lark_md"
 
-	element1 := Element{Text: bodyContent,Tag: "div"}
-	element2 := Element{Text: operatorContent,Tag: "div"}
+	element1 := Element{Text: bodyContent, Tag: "div"}
+	element2 := Element{Text: operatorContent, Tag: "div"}
 
 	req.Header.Title = titleContent
 	req.Elements = make([]*Element, 0)
-	req.Elements = append(req.Elements,&element1)
-	req.Elements = append(req.Elements,&element2)
+	req.Elements = append(req.Elements, &element1)
+	req.Elements = append(req.Elements, &element2)
 	str1 := jsonx.ToString(req)
 	fmt.Printf(str1)
 	return req
